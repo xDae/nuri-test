@@ -1,0 +1,29 @@
+type Query {
+  blocks: [Block]
+  rawBlock(hash: ID!): RawBlock
+}
+
+type Block {
+  hash: ID!
+  height: Int!
+  time: Int!
+  block_index: Int!
+}
+
+type RawBlock {
+  hash: ID!
+  ver: Int!
+  prev_block: String
+  mrkl_root: String!
+  time: Int!
+  bits: Int!
+  fee: Int!
+  nonce: Int
+  n_tx: Int!
+  size: Int!
+  block_index: Int!
+  main_chain: Boolean!
+  height: Int!
+  weight: Int!
+  next_block: [String]
+}
